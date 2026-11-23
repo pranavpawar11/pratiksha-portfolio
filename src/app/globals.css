@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ---------- Theme tokens ---------- */
+:root {
+  color-scheme: light;
+  --bg: #f5f1e9;
+  --bg-alt: #ece5d8;
+  --fg: #191919;
+  --muted: #5f5b54; /* darker than #77736C so small text passes 4.5:1 on ivory */
+  --muted-soft: #77736c;
+  --accent: #e4774d;
+  --accent-text: #b04a24; /* small accent text, 4.5:1+ on ivory */
+  --on-accent: #191919;
+  --sage: #a8b5a0;
+  --sage-text: #4f5d49;
+  --card: #ffffff;
+  --card-sand: #e7ded1;
+  --border: #d9cfbf;
+  --lab-bg: #22231f;
+  --lab-fg: #f5f1e9;
+  --lab-muted: #b8b5ad;
+  --lab-card: #292a25;
+  --lab-border: #41413a;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #171715;
+  --bg-alt: #22231f;
+  --fg: #f5f1e9;
+  --muted: #b8b5ad;
+  --muted-soft: #b8b5ad;
+  --accent: #e4774d;
+  --accent-text: #ec8d68;
+  --on-accent: #191919;
+  --sage: #a8b5a0;
+  --sage-text: #a8b5a0;
+  --card: #292a25;
+  --card-sand: #292a25;
+  --border: #41413a;
+  --lab-bg: #0f0f0e;
+  --lab-card: #22231f;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-alt: var(--bg-alt);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-on-accent: var(--on-accent);
+  --color-sage: var(--sage);
+  --color-sage-text: var(--sage-text);
+  --color-card: var(--card);
+  --color-sand: var(--card-sand);
+  --color-line: var(--border);
+  --color-lab: var(--lab-bg);
+  --color-lab-fg: var(--lab-fg);
+  --color-lab-muted: var(--lab-muted);
+  --color-lab-card: var(--lab-card);
+  --color-lab-line: var(--lab-border);
+  --font-serif: var(--font-playfair), "Georgia", serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-label: var(--font-grotesk), var(--font-inter), system-ui, sans-serif;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 0.35vw + 14px, 17.5px);
+  line-height: 1.65;
+  overflow-x: hidden;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.015em; line-height: 1.08; text-wrap: balance; }
+p { text-wrap: pretty; }
+section[id], .anchor { scroll-margin-top: 4rem; }
+a, button, summary, [role="tab"] { touch-action: manipulation; }
+::selection { background: var(--accent); color: var(--on-accent); }
+:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 2px; }
+.lab :focus-visible { outline-color: var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ---------- Utilities ---------- */
+.label {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.h-hero { font-size: clamp(2.5rem, 1.6rem + 3.6vw, 4.75rem); }
+.h-section { font-size: clamp(2rem, 1.4rem + 2.3vw, 3.25rem); }
+.h-project { font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.75rem); }
+.h-card { font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.6rem); }
+.tabular { font-variant-numeric: tabular-nums; }
+.ink-underline { background: linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 0.12em no-repeat; }
+.hairline { border-color: var(--border); }
+.grain { background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 18px 18px; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-2 { animation-delay: 0.08s; } .rise-3 { animation-delay: 0.16s; } .rise-4 { animation-delay: 0.24s; }
+
+.scrollbar-none { scrollbar-width: none; } .scrollbar-none::-webkit-scrollbar { display: none; }

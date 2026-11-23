@@ -1,0 +1,12 @@
+# Pratiksha Shelke: Digital Marketing Portfolio
+
+> Portfolio of Pratiksha Shelke, an aspiring digital marketing professional (fresher) and Computer Engineering graduate based in Pune, Maharashtra, India. Focus areas: SEO, social media marketing, content strategy, Google Ads, Meta Ads and AI marketing.
+
+## Pages
+- [Home](/): About, expertise, projects, marketing lab, learning journey and contact details.
+- [Raje Masale: Digital Marketing Strategy](/projects/raje-masale): Self-initiated brand marketing project.
+- [SEO Keyword Research and Website Audit](/projects/seo-website-audit): Practice project.
+
+## Notes
+- All projects are self-initiated or practice projects. No client work or campaign results are claimed.
+- Certification: Digital Marketing Masterclass 2026: AI Marketing Course (Udemy, Nov 4, 2026, 67 total hours).
